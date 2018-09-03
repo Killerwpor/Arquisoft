@@ -1,0 +1,32 @@
+create table "APP".CLIENTE
+(
+	CEDULA VARCHAR(10) not null primary key,
+	NOMBRE VARCHAR(30) not null,
+	APELLIDO VARCHAR(30) not null,
+	DIRECCION VARCHAR(50),
+	TELEFONO VARCHAR(10)
+)
+
+create table "APP".VEHICULO
+(
+	MATRICULA VARCHAR(20) not null primary key,
+	MARCA VARCHAR(30) not null,
+	MODELO VARCHAR(20) not null,
+	COLOR VARCHAR(10),
+	PRECIO INTEGER not null,
+	FOTO BLOB(2147483647)
+)
+create table "APP".VENDEDOR
+(
+	CEDULA VARCHAR(10) not null primary key,
+	NOMBRE VARCHAR(30) not null,
+	APELLIDO VARCHAR(30) not null
+)
+create table "APP".VENTAS_GENERALES
+(
+	CODIGO_VENTA VARCHAR(10) not null primary key,
+	CLIENTE VARCHAR(10),
+	VEHICULO VARCHAR(20),
+	VENDEDOR VARCHAR(10),
+	VALOR_TOTAL INTEGER not null
+)
